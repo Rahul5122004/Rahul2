@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Admin Panel Styling */
+.container {
+    max-width: 80%;
+    margin: auto;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Table Styling */
+.table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Styled Buttons for Actions */
+a.edit-btn, a.delete-btn {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.edit-btn {
+    background: #007bff;
+    color: white;
+}
+
+a.edit-btn:hover {
+    background: #0056b3;
+}
+
+a.delete-btn {
+    background: #d9534f;
+    color: white;
+}
+
+a.delete-btn:hover {
+    background: #c9302c;
+}
+
+/* Navbar Styling */
+.navbar {
+    padding: 10px;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: white !important; /* Ensure same color for Home & Logout */
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+
+
