@@ -54,71 +54,145 @@ if (isset($_GET['id'])) {
     <title>Edit Recipe</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        table {
+        /* General Reset */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container for the form */
+        .container {
             width: 90%;
-            border-collapse: collapse;
-            margin: 20px auto;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
         }
-        th, td {
-            border: 1px solid black;
-            padding: 10px;
+
+        h2 {
             text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
         }
-        th {
-            background-color: #333;
-            color: white;
+
+        /* Form groups */
+        .form-group {
+            margin-bottom: 15px;
         }
-        .delete-btn {
-            background-color: red;
-            color: white;
-            padding: 5px 10px;
-            border: none;
-            cursor: pointer;
+
+        .form-group label {
+            font-size: 16px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
             border-radius: 5px;
+            border: 1px solid #ddd;
+            box-sizing: border-box; /* ensures padding doesn't overflow */
         }
-        .delete-btn:hover {
-            background-color: darkred;
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical; /* allows vertical resizing */
         }
-        .update-btn {
+
+        .form-group button {
+            padding: 12px;
             background-color: green;
             color: white;
-            padding: 5px 10px;
             border: none;
-            cursor: pointer;
             border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
         }
-        .update-btn:hover {
+
+        .form-group button:hover {
             background-color: darkgreen;
         }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .form-group button {
+                font-size: 14px;
+            }
+
+            .form-group label {
+                font-size: 14px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+
+        @media (min-width: 601px) {
+            .container {
+                width: 60%;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <h2 style="text-align: center;">Edit Recipe</h2>
-    <center>
+
+    <div class="container">
+        <h2>Edit Recipe</h2>
+
         <form method="POST">
-            <table>
-                <tr>
-                    <th>Recipes Name</th>
-                    <th>Image Path</th>
-                    <th>Ingredients</th>
-                    <th>Instructions</th>
-                    <th>Recipe Video URL</th>
-                    <th>Suggestions</th>
-                    <th>Action</th>
-                </tr>
-                <tr>
-                    <td><input type="text" name="name" value="<?php echo htmlspecialchars($recipe['name']); ?>" required></td>
-                    <td><input type="text" name="image" value="<?php echo htmlspecialchars($recipe['image']); ?>" required></td>
-                    <td><textarea name="ingredients" required><?php echo htmlspecialchars($recipe['ingredients']); ?></textarea></td>
-                    <td><textarea name="instructions" required><?php echo htmlspecialchars($recipe['instructions']); ?></textarea></td>
-                    <td><textarea name="video_url" required><?php echo htmlspecialchars($recipe['video_url']); ?></textarea></td>
-                    <td><textarea name="suggestions"><?php echo htmlspecialchars($recipe['suggestions']); ?></textarea></td>
-                    <td>
-                        <button type="submit" class="update-btn">Update Recipe</button>
-                    </td>
-                </tr>
-            </table>
+            <div class="form-group">
+                <label for="name">Recipe Name</label>
+                <input type="text" name="name" id="name" value="<?php echo htmlspecialchars($recipe['name']); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="image">Image Path</label>
+                <input type="text" name="image" id="image" value="<?php echo htmlspecialchars($recipe['image']); ?>" required>
+            </div>
+            <div class="form-group">
+                <label for="ingredients">Ingredients</label>
+                <textarea name="ingredients" id="ingredients" required><?php echo htmlspecialchars($recipe['ingredients']); ?></textarea>
+            </div>
+            <div class="form-group">
+                <label for="instructions">Instructions</label>
+                <textarea name="instructions" id="instructions" required><?php echo htmlspecialchars($recipe['instructions']); ?></textarea>
+            </div>
+            <div class="form-group">
+                <label for="video_url">Recipe Video URL</label>
+                <textarea name="video_url" id="video_url" required><?php echo htmlspecialchars($recipe['video_url']); ?></textarea>
+            </div>
+            <div class="form-group">
+                <label for="suggestions">Suggestions</label>
+                <textarea name="suggestions" id="suggestions"><?php echo htmlspecialchars($recipe['suggestions']); ?></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="update-btn">Update Recipe</button>
+            </div>
         </form>
-    </center>
+    </div>
+
 </body>
 </html>
+ 
