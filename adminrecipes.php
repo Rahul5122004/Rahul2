@@ -31,6 +31,7 @@ $recipeResult = $recipesConn->query($recipeQuery);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script src="script1.js"></script>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <h3 class="navbar-brand">Admin Dashboard</h3>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
@@ -89,6 +90,10 @@ $recipeResult = $recipesConn->query($recipeQuery);
             <div class="card-header">
                 Manage Recipes
             </div>
+            
+<center>
+      <input type="text" id="search-bar" placeholder="Search for food..." onkeyup="searchFood()">
+  </center>
             <div class="card-body">
                 <table class="table table-striped">
                     <thead>
